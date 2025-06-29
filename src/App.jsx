@@ -11,19 +11,16 @@ function App() {
 
   const addValue = () => {
     if (counter < 20) {
-      counter = counter + 1
-    setCounter(counter)
-    
-    console.log("Clicked", counter);
+      // counter = counter + 1
+    setCounter(counter + 1)
+
     }
   }
 
   const removeValue = () => {
     if (counter > 0) {
-      counter = counter - 1
-    setCounter(counter)
-    
-    console.log("Clicked", counter);
+      // counter = counter - 1
+    setCounter(counter - 1)
     }
   }
   
@@ -44,7 +41,10 @@ function App() {
       <button onClick={()=>bgColorChanger("black")} className='border border-amber-600 px-4 py-1 rounded-lg hover:bg-amber-500 hover:text-amber-50 duration-350 active:bg-amber-700'>Dark</button>
       <button onClick={()=>bgColorChanger("white")} className='border border-amber-600 px-4 py-1 rounded-lg hover:bg-amber-500 hover:text-amber-50 duration-350 active:bg-amber-700'>Light</button> 
     </div>
-      <div className={`border text-${textcolor} duration-400 transition-colors flex flex-col justify-center items-center border-black  bg-${color}  w-[100vw]  `}>
+      < div  style={{
+        backgroundColor: color,
+        color:textcolor,
+      }} className={`border  duration-400 transition-colors flex flex-col justify-center items-center border-black   w-[100vw]  `}>
       <h1 className='text-5xl'>Chai Aur React {counter}</h1>
       <h2>Counter Value: {counter}</h2>
 
@@ -57,6 +57,6 @@ function App() {
       
     </>
   )
-}
+} 
 
 export default App
